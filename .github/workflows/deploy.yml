@@ -41,6 +41,5 @@ jobs:
 
     - name: Update Kubernetes deployment image
       run: |
-        # Replace placeholder with actual tagged image
         sed -i 's|__IMAGE_NAME__|${{ secrets.ACR_LOGIN_SERVER }}/node-web-app:${{ github.sha }}|g' k8s/app-deployment.yaml
         kubectl apply -f k8s/app-deployment.yaml
